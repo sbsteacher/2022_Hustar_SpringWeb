@@ -5,11 +5,13 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
+
 @Service
 public class UserService {
 
-    @Autowired
-    private UserMapper mapper;
+    @Autowired private UserMapper mapper;
+    @Autowired private HttpSession hs;
 
     public int join(UserEntity entity) {
         //비밀번호 암호화
@@ -32,6 +34,8 @@ public class UserService {
         } else if(!BCrypt.checkpw(entity.getUserpw(), dbUser.getUserpw())) {
             return 3; //비밀번호 다름
         }
+
+        hs.setAttribute("loginUser", dbUser);
         return 1; //로그인 성공!!
     }
 }
