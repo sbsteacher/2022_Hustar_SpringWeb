@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -43,6 +46,12 @@ public class UserController {
             }
             return "redirect:/user/login";
         }
+        return "redirect:/board/list";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession hs) {
+        hs.invalidate();
         return "redirect:/board/list";
     }
 
