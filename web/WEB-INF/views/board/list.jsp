@@ -18,7 +18,12 @@
             </c:otherwise>
         </c:choose>
     </header>
-    <section>section</section>
+    <section>
+        <c:if test="${sessionScope.loginUser != null}">
+            <a href="/board/write">글쓰기</a>
+        </c:if>
+        <div>리스트</div>
+    </section>
     <footer>footer</footer>
 </body>
 </html>
