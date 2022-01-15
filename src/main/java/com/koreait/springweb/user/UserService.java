@@ -18,4 +18,20 @@ public class UserService {
 
         return mapper.insUser(entity);
     }
+    //0: 에러발생, 1: 로그인 성공, 2: 아이디 없음, 3:비밀번호 다름
+    public int login(UserEntity entity) { //userid, userpw값이 있음
+        UserEntity dbUser = null;
+        try {
+            dbUser = mapper.selUser(entity);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0; //에러 발생
+        }
+        if(dbUser == null) {
+            return 2; //아이디 없음
+        } else if(!BCrypt.checkpw(entity.getUserpw(), dbUser.getUserpw())) {
+            return 3; //비밀번호 다름
+        }
+        return 1; //로그인 성공!!
+    }
 }

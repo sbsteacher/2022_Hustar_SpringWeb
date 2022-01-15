@@ -15,14 +15,24 @@ public class UserController {
     private UserService service;
 
     @GetMapping("/join")
-    public String join() {
-        return "user/join";
-    }
+    public void join() {}
 
     @PostMapping("/join")
     public String joinProc(UserEntity entity) {
+        System.out.println(entity);
         int result = service.join(entity);
-
         return "redirect:/user/login";
     }
+
+    @GetMapping("/login")
+    public void login() {}
+
+    @PostMapping("/login")
+    public String loginProc(UserEntity entity) {
+        System.out.println(entity);
+        int result = service.login(entity);
+        System.out.println("login-state: " + result);
+        return "redirect:/board/list";
+    }
+
 }
