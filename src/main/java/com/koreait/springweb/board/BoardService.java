@@ -1,11 +1,13 @@
 package com.koreait.springweb.board;
 
 import com.koreait.springweb.model.BoardEntity;
+import com.koreait.springweb.model.BoardVo;
 import com.koreait.springweb.model.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Service
 public class BoardService {
@@ -17,5 +19,9 @@ public class BoardService {
         int loginUserIuser = loginUser.getIuser();
         entity.setIuser(loginUserIuser);
         return mapper.insBoard(entity);
+    }
+
+    public List<BoardVo> selBoardList() {
+        return mapper.selBoardList();
     }
 }

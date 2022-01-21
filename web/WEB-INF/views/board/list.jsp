@@ -23,6 +23,24 @@
             <a href="/board/write">글쓰기</a>
         </c:if>
         <div>리스트</div>
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>조회수</th>
+                <th>작성자</th>
+                <th>작성일</th>
+            </tr>
+        <c:forEach items="${requestScope.list}" var="item">
+            <tr>
+                <td>${item.iboard}</td>
+                <td>${item.title}</td>
+                <td>${item.hits}</td>
+                <td>${item.writernm}</td>
+                <td>${item.rdt}</td>
+            </tr>
+        </c:forEach>
+        </table>
     </section>
     <footer>footer</footer>
 </body>
