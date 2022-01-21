@@ -24,4 +24,8 @@ public class BoardService {
     public List<BoardVo> selBoardList() {
         return mapper.selBoardList();
     }
+
+    public BoardVo selBoard(BoardEntity entity) {
+        return mapper.selBoard(entity);
+    }
 }
