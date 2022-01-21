@@ -32,7 +32,7 @@
                 <th>작성일</th>
             </tr>
         <c:forEach items="${requestScope.list}" var="item">
-            <tr>
+            <tr class="record" data-iboard="${item.iboard}">
                 <td>${item.iboard}</td>
                 <td>${item.title}</td>
                 <td>${item.hits}</td>
@@ -43,5 +43,6 @@
         </table>
     </section>
     <footer>footer</footer>
+    <script src="/resource/js/boardList.js"></script>
 </body>
 </html>

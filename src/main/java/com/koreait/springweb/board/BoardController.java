@@ -28,4 +28,9 @@ public class BoardController {
         int result = service.insBoard(entity);
         return "redirect:/board/list";
     }
+
+    @GetMapping("/detail")
+    public void detail(BoardEntity entity) {
+        System.out.println(entity);
+    }
 }

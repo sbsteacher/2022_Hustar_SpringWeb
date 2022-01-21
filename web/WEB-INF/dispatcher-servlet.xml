@@ -16,6 +16,8 @@
     <!-- @Controller 주소값 매핍할 수 있는 기능!!! 기능 활성화 -->
     <mvc:annotation-driven />
 
+    <mvc:resources mapping="/resource/**" location="/resource/" />
+
     <!-- xml파일에서 ViewResolver 빈등록 -->
     <!-- 뷰리졸버 역할 jsp파일명을 완성시켜준다. -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
