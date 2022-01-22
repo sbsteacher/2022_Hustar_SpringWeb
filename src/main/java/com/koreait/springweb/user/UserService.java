@@ -39,3 +39,11 @@ public class UserService {
         return 1; //로그인 성공!!
     }
 }
+/*
+    pageContext
+    request
+    session
+
+    application
+
+ */
