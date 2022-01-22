@@ -33,6 +33,13 @@ public class BoardService {
         return mapper.addHits(entity);
     }
 
+    public int updBoard(BoardEntity entity) {
+        UserEntity loginUser = (UserEntity)hs.getAttribute("loginUser");
+        int loginUserIuser = loginUser == null ? 0 : loginUser.getIuser();
+        entity.setIuser(loginUserIuser);
+        return mapper.updBoard(entity);
+    }
+
     public int delBoard(BoardEntity entity) {
         UserEntity loginUser = (UserEntity)hs.getAttribute("loginUser");
         int loginUserIuser = loginUser == null ? 0 : loginUser.getIuser();

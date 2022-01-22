@@ -32,6 +32,14 @@
          WHERE iboard = #{iboard}
     </update>
 
+    <update id="updBoard">
+        UPDATE t_board
+           SET title = #{title}
+               , ctnt = #{ctnt}
+         WHERE iboard = #{iboard}
+           AND iuser = #{iuser}
+    </update>
+
     <delete id="delBoard">
         DELETE FROM t_board
          WHERE iboard = #{iboard}

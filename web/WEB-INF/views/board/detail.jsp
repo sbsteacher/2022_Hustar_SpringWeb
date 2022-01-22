@@ -12,7 +12,7 @@
     <div><a href="/board/list">리스트로 돌아가기</a></div>
     <c:if test="${sessionScope.loginUser.iuser == data.iuser}">
     <div>
-        <input type="button" value="수정">
+        <a href="/board/mod?iboard=${data.iboard}"><input type="button" value="수정"></a>
         <input id="del_btn" type="button" value="삭제">
     </div>
     </c:if>
