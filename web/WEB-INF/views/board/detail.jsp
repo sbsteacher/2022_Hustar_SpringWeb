@@ -8,6 +8,7 @@
     <title>${data.title}</title>
 </head>
 <body>
+    <div><a href="/board/list">리스트로 돌아가기</a></div>
     <div>제목 : ${data.title}</div>
     <div>조회수 : ${data.hits}</div>
     <div>작성자 : ${data.writernm}</div>

@@ -28,4 +28,8 @@ public class BoardService {
     public BoardVo selBoard(BoardEntity entity) {
         return mapper.selBoard(entity);
     }
+
+    public int addHits(BoardEntity entity) {
+        return mapper.addHits(entity);
+    }
 }

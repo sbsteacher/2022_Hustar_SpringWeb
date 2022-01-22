@@ -25,4 +25,11 @@
           ON A.iuser = B.iuser
         WHERE A.iboard = #{iboard}
     </select>
+
+    <update id="addHits">
+        UPDATE t_board
+           SET hits = hits + 1
+         WHERE iboard = #{iboard}
+    </update>
+
 </mapper>

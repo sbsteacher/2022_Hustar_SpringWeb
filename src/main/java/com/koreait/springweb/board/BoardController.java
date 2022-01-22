@@ -32,6 +32,7 @@ public class BoardController {
     @GetMapping("/detail")
     public void detail(BoardEntity entity, Model model) {
         System.out.println(entity);
+        service.addHits(entity);
         model.addAttribute("data", service.selBoard(entity));
     }
 }
