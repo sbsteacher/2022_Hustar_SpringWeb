@@ -16,11 +16,16 @@
         <input id="del_btn" type="button" value="삭제">
     </div>
     </c:if>
+    <div>글번호 : ${data.iboard}</div>
     <div>제목 : ${data.title}</div>
     <div>조회수 : ${data.hits}</div>
     <div>작성자 : ${data.writernm}</div>
     <div>작성일 : ${data.rdt}</div>
     <div>내용 : ${data.ctnt}</div>
+    <div>
+        <a href="/board/detail?iboard=${prevNext.previboard}"><button>이전글</button></a>
+        <a href="/board/detail?iboard=${prevNext.nextiboard}"><button>다음글</button></a>
+    </div>
     <script src="/resource/js/boardDetail.js"></script>
 </body>
 </html>

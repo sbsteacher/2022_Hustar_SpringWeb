@@ -1,6 +1,7 @@
 package com.koreait.springweb.board;
 
 import com.koreait.springweb.model.BoardEntity;
+import com.koreait.springweb.model.BoardPrevNextInfoVo;
 import com.koreait.springweb.model.BoardVo;
 import com.koreait.springweb.model.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,10 @@ public class BoardService {
 
     public BoardVo selBoard(BoardEntity entity) {
         return mapper.selBoard(entity);
+    }
+
+    public BoardPrevNextInfoVo selPrevNextInfo(BoardEntity entity) {
+        return mapper.selPrevNextInfo(entity);
     }
 
     public int addHits(BoardEntity entity) {

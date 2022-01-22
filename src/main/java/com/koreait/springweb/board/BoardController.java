@@ -34,6 +34,7 @@ public class BoardController {
         System.out.println(entity);
         service.addHits(entity);
         model.addAttribute("data", service.selBoard(entity));
+        model.addAttribute("prevNext", service.selPrevNextInfo(entity));
     }
 
     @GetMapping("/del")

@@ -26,6 +26,29 @@
         WHERE A.iboard = #{iboard}
     </select>
 
+    <select id="selPrevNextInfo" resultType="BoardPrevNextInfoVo">
+        <![CDATA[
+        SELECT
+            ifnull(
+                (
+                    SELECT iboard
+                    FROM t_board
+                    WHERE iboard > #{iboard}
+                    LIMIT 1
+                ), 0
+            ) as previboard,
+            ifnull(
+                (
+                    SELECT iboard
+                    FROM t_board
+                    WHERE iboard < #{iboard}
+                    ORDER BY iboard DESC
+                    LIMIT 1
+                ), 0
+            ) as nextiboard
+        ]]>
+    </select>
+
     <update id="addHits">
         UPDATE t_board
            SET hits = hits + 1
