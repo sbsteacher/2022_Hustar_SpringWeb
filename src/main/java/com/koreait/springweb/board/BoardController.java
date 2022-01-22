@@ -35,4 +35,10 @@ public class BoardController {
         service.addHits(entity);
         model.addAttribute("data", service.selBoard(entity));
     }
+
+    @GetMapping("/del")
+    public String del(BoardEntity entity) {
+        int result = service.delBoard(entity);
+        return "redirect:/board/list";
+    }
 }

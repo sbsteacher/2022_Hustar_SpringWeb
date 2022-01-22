@@ -32,4 +32,10 @@
          WHERE iboard = #{iboard}
     </update>
 
+    <delete id="delBoard">
+        DELETE FROM t_board
+         WHERE iboard = #{iboard}
+           AND iuser = #{iuser}
+    </delete>
+
 </mapper>

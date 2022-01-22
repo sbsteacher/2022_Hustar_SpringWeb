@@ -32,4 +32,11 @@ public class BoardService {
     public int addHits(BoardEntity entity) {
         return mapper.addHits(entity);
     }
+
+    public int delBoard(BoardEntity entity) {
+        UserEntity loginUser = (UserEntity)hs.getAttribute("loginUser");
+        int loginUserIuser = loginUser == null ? 0 : loginUser.getIuser();
+        entity.setIuser(loginUserIuser);
+        return mapper.delBoard(entity);
+    }
 }
