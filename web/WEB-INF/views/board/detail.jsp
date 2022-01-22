@@ -23,8 +23,14 @@
     <div>작성일 : ${data.rdt}</div>
     <div>내용 : ${data.ctnt}</div>
     <div>
-        <a href="/board/detail?iboard=${prevNext.previboard}"><button>이전글</button></a>
-        <a href="/board/detail?iboard=${prevNext.nextiboard}"><button>다음글</button></a>
+        <c:if test="${prevNext.previboard == 0}">
+            <c:set var="prevDisabled" value="disabled"/>
+        </c:if>
+        <c:if test="${prevNext.nextiboard == 0}">
+            <c:set var="nextDisabled" value="disabled"/>
+        </c:if>
+        <a href="/board/detail?iboard=${prevNext.previboard}"><button ${pageScope.prevDisabled}>이전글</button></a>
+        <a href="/board/detail?iboard=${prevNext.nextiboard}"><button ${pageScope.nextDisabled}>다음글</button></a>
     </div>
     <script src="/resource/js/boardDetail.js"></script>
 </body>
